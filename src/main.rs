@@ -1,18 +1,28 @@
 mod binary_tree;
 mod r#loop;
 mod recur;
+mod avl_tree;
+mod sort;
 
 use crate::binary_tree::{ArrayBinaryTree, binary_search_tree, build_perfect_tree, find_in_binary_search_tree, in_order, insert_in_binary_search_tree, insert_node, level_order, post_order, pre_order, remove_node, test_binary_tree};
 use crate::r#loop::{for_loop, while_loop};
 use crate::recur::{fib, for_loop_recur, recur, tail_recur};
+use crate::sort::{bubble_sort, selection_sort};
 
 fn main() {
     let n = 100;
     loop_n(n);
     recur_n(n);
     binary_tree();
+
+    sorts();
 }
 
+
+fn sorts(){
+    selection_sort(&mut [4, 5, 1, 2, 9]);
+    bubble_sort(&mut [4, 5, 1, 2, 9])
+}
 
 fn binary_tree(){
     println!("test tree print: {:?}", test_binary_tree());
